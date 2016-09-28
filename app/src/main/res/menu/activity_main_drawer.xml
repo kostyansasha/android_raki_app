@@ -3,13 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_about_us"
+            android:title="Главная" />
+        <item
             android:id="@+id/nav_main_buy"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Buy" />
+            android:title="Заказать" />
         <item
             android:id="@+id/nav_about_us"
             android:icon="@drawable/ic_menu_about_us"
-            android:title="About us" />
+            android:title="О нас" />
     </group>
 
     <item android:title="Communicate">

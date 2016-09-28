@@ -1,10 +1,10 @@
 package raki.com.raki_app;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -15,9 +15,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ *
+ * @author Kostian Sasha
+ * @version %I%, %G%
+ */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,6 +29,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //не поворачивать
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -35,16 +43,13 @@ public class MainActivity extends AppCompatActivity
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                   //      .setAction("Action", null).show();
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:+380999006930"));
+                intent.setData(Uri.parse( "tel:" + getResources().getString(R.string.telephone_number) ));
+                //intent.setData(Uri.parse( new String("tel:"+R.string.telephone_number) ));
                 startActivity(intent);
                 //If you want to initiate the call directly without user's interaction ,
                 // You can use action Intent.ACTION_CALL. In this case, you must add the
                 // following permission in your AndroidManifest.xml:
                 //<uses-permission android:name="android.permission.CALL_PHONE" />
-
-
-
-
             }
         });
 
@@ -56,6 +61,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        onNavigationItemSelected(navigationView.getMenu().getItem(0));
     }
 
     @Override
@@ -68,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -89,7 +96,7 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
+    */
 
     private FragmentTransaction transaction;
 
@@ -98,18 +105,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        Fragment fragment   = null;
+        Fragment fragment = null;
         Class fragmentClass = null;
 
         if (id == R.id.nav_main_buy) {
             fragmentClass = Buy.class;
         } else if (id == R.id.nav_about_us) {
-            return false;
-            //fragmentClass = SaveInList.class;
+            fragmentClass = AboutUs.class;
         } else if (id == R.id.nav_share) {
-
+            return true;
         } else if (id == R.id.nav_send) {
-
+            return true;
+        } else if (id == R.id.nav_home) {
+            fragmentClass = Home.class;
         }
 
 

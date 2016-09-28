@@ -1,8 +1,35 @@
 <resources>
-    <string name="app_name">raki_app</string>
+    <string name="app_name">Раки Сумы</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="buy_gradation_1">20г</string>
+    <string name="buy_gradation_2">30г</string>
+    <string name="buy_gradation_3">40г</string>
+    <string name="buy_gradation_4">60г</string>
+
+    <string name="buy_textView_address">Введите адрес для доставки</string>
+    <string name="buy_textView_addressAndFastDelivery">Введите дату, время и адрес для доставки,\n
+        или только дату и время, оператор свяжется с Вами для уточнения точного места доставки.</string>
+
+    <string name="buy_name_of_methodSend">Метод для отправки заявки</string>
+
+    <string name="telephone_number">+380974654080</string>
+
+    <string name="buy_method_of_send_SMS">SMS</string>
+    <string name="buy_method_of_send_EMAIL">email</string>
+    <string name="buy_nameOfButton">Подтвердить</string>
+    <string name="buy_checkBox_fastDelivery">Доставить как можно быстрее?</string>
+    <string name="buy_textView_nameOfAllWeight">Какой вес(кг)?</string>
+    <string name="buy_textView_nameOfGradation">Выберите градацию:</string>
+    <string name="cost_of_order">Общая стоимость</string>
+
+    <string name="home_head">Хотите чето-то необычного?\n
+        тогда Вы сделали правильно, что зашли к нам!\n
+        У нас самый вкусный рачёк,\n
+        без выходных и доставкой по городу.</string>
+    <string name="home_text2">Закажите прямо сейчас</string>
 </resources>

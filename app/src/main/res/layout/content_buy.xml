@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выберите вес"
-        android:id="@+id/textView3"
+        android:text="@string/buy_textView_nameOfGradation"
+        android:id="@+id/buy_textView1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorText"/>
 
 
     <RadioGroup
@@ -22,37 +25,126 @@
         android:orientation="horizontal" >
 
         <RadioButton
-            android:id="@+id/radio_weight_20"
-            android:text="20"
+            android:id="@+id/radio_weight_1"
+            android:text="@string/buy_gradation_1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_weight="1" />
 
         <RadioButton
-            android:id="@+id/radio_weight_30"
-            android:text="30"
+            android:id="@+id/radio_weight_2"
+            android:text="@string/buy_gradation_2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_weight="1" />
 
         <RadioButton
-            android:id="@+id/radio_weight_40"
-            android:text="40"
+            android:id="@+id/radio_weight_3"
+            android:text="@string/buy_gradation_3"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_weight="1"
-            android:checked="true"/>
+            android:layout_weight="1" />
 
         <RadioButton
-            android:id="@+id/radio_weight_60"
-            android:text="60"
+            android:id="@+id/radio_weight_4"
+            android:text="@string/buy_gradation_4"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_weight="1" />
     </RadioGroup>
 
+    <TextView
+        android:text="@string/buy_textView_nameOfAllWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy_textView2"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/buy_editText_total_weight"
+        android:textColor="@color/colorText"/>
+
+    <CheckBox
+        android:text="@string/buy_checkBox_fastDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy_checkBox_fast_delivery"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:text="@string/buy_textView_addressAndFastDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy_textView_inputForAddress"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/buy_editText_address"
+        android:textColor="@color/colorText"
+        android:inputType="textPersonName"/>
+
+    <RadioGroup
+        android:id="@+id/buy_radioGroup_method_for_buy"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/buy_radio_text_nameOfSendMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buy_name_of_methodSend"
+            android:textColor="@color/colorText"/>
+
+        <RadioButton
+            android:id="@+id/buy_radio_use_sms"
+            android:text="@string/buy_method_of_send_SMS"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/buy_radio_use_email"
+            android:text="@string/buy_method_of_send_EMAIL"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/buy_editText_inputTelephone"
+        android:visibility="invisible" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy_textView_coast"
+        android:visibility="invisible" />
+
+    <Button
+        android:text="@string/buy_nameOfButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy_buttonBuy" />
 </LinearLayout>

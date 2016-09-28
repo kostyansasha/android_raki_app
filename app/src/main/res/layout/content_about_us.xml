@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+
+        android:src="@drawable/lobster_and_letters"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutUS_textView1"
+        android:text="    Раки - традиционный деликатес, мясо которых имеет полезные свойстава и нежный вкус.
+        \n\n    Мы очень небольшая группа людей, готовые к большим изменениям в своем бизнесе и жизни.
+        \n\n    Будем рады к пожеланиям и сотрудничеству."
+        android:textSize="16sp"
+        android:textColor="@color/colorText"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutUS_textView5"
+        android:autoLink="email"
+        android:linksClickable="true"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Свяжитесь с нами по почте:
+        \n      lobster_sumy@mmm
+        \nили позвоните."
+        android:textColor="@color/colorText"/>
+</LinearLayout>

@@ -11,14 +11,15 @@ import android.view.ViewGroup;
  * @author Kostian Sasha
  * @version %I%, %G%
  */
-public class AboutUs extends Fragment {
+
+public class Home  extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        View view = inflater.inflate(R.layout.content_about_us, container, false);
+        View view = inflater.inflate(R.layout.content_home, container, false);
 
         return view;
     }
