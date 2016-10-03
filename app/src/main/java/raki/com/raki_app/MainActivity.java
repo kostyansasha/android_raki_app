@@ -98,12 +98,7 @@ public class MainActivity extends AppCompatActivity
     }
     */
 
-    private FragmentTransaction transaction;
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
+    public void displayView(int id) {
 
         Fragment fragment = null;
         Class fragmentClass = null;
@@ -113,9 +108,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_about_us) {
             fragmentClass = AboutUs.class;
         } else if (id == R.id.nav_share) {
-            return true;
+            return ;
         } else if (id == R.id.nav_send) {
-            return true;
+            return ;
         } else if (id == R.id.nav_home) {
             fragmentClass = Home.class;
         }
@@ -127,7 +122,7 @@ public class MainActivity extends AppCompatActivity
             //write in log
             e.printStackTrace();
         }
-        item.setChecked(true);
+
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         //fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
@@ -139,6 +134,16 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+    }
+
+    private FragmentTransaction transaction;
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        displayView(item.getItemId());
+        item.setChecked(true);
         return true;
     }
 }

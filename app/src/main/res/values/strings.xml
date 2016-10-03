@@ -27,9 +27,11 @@
     <string name="buy_textView_nameOfGradation">Выберите градацию:</string>
     <string name="cost_of_order">Общая стоимость</string>
 
-    <string name="home_head">Хотите чето-то необычного?\n
-        тогда Вы сделали правильно, что зашли к нам!\n
-        У нас самый вкусный рачёк,\n
-        без выходных и доставкой по городу.</string>
-    <string name="home_text2">Закажите прямо сейчас</string>
+    <string name="home_head">Хотите чето-то необычного?
+        </string>
+    <string name="home_text2"> Без выходных,\n
+        доставка по городу.</string>
+    <string name="home_text3">Заказать</string>
+
+    <string name="buy_hint_inputPhone">Введите свой номер</string>
 </resources>
