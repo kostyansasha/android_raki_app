@@ -38,4 +38,5 @@
         \n      lobster_sumy@mmm
         \nили позвоните."
         android:textColor="@color/colorText"/>
+
 </LinearLayout>

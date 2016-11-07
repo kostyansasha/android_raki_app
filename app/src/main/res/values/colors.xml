@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#38c20e</color>
-    <color name="colorText">#051758</color>
+    <color name="colorText">#3F51B5</color>
+    <color name="colorCard">#3F51B5</color>
+    <color name="colorTextOnCard">#ffffff</color>
     <color name="colorHead">#e41d1d</color>
+    <color name="colorBackgroundActivity">#ffffff</color>
 </resources>
