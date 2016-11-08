@@ -36,7 +36,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingRight="@dimen/activity_horizontal_margin_shift"
         android:paddingTop="@dimen/activity_vertical_margin_shift"
         android:paddingLeft="@dimen/activity_horizontal_margin_shift"
@@ -70,12 +70,13 @@
                 android:orientation="horizontal"
                 android:id="@+id/wide_card_itself"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1.0">
+
                     <ImageView
                         android:id="@+id/section_wide_image"
                         app:srcCompat="@drawable/green_4"
@@ -87,6 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1.0">
+
                     <TextView
                         android:id="@+id/buy_buttonBuyCards"
                         android:text="@string/home_text3"
@@ -101,6 +103,68 @@
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/activity_horizontal_margin_shift"
+        android:paddingTop="@dimen/activity_vertical_margin_shift"
+        android:paddingLeft="@dimen/activity_horizontal_margin_shift"
+        android:paddingBottom="@dimen/activity_vertical_margin_shift">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1.0"
+            android:paddingRight="@dimen/activity_horizontal_margin_shift_between_2cards">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                card_view:cardBackgroundColor="@color/colorCard"
+                card_view:cardCornerRadius="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:id="@+id/home_card_view_contacts">
+                <TextView
+                    android:id="@+id/home_text_contacts"
+                    android:text="@string/home_text_contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextOnCard"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1.0"
+            android:paddingLeft="@dimen/activity_horizontal_margin_shift_between_2cards">
+
+            <android.support.v7.widget.CardView
+                app:cardBackgroundColor="@color/colorCard"
+                app:cardCornerRadius="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:id="@+id/home_card_view_3">
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

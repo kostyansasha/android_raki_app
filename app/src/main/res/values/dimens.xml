@@ -9,5 +9,6 @@
 
     <dimen name="activity_horizontal_margin_shift">16dp</dimen>
     <dimen name="activity_vertical_margin_shift">16dp</dimen>
+    <dimen name="activity_horizontal_margin_shift_between_2cards">8dp</dimen>
 
 </resources>

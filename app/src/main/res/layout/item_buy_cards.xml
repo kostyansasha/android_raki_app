@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_buy_card"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin_shift_between_2cards"
+
+    android:paddingTop="@dimen/activity_vertical_margin_shift"
+    android:paddingLeft="@dimen/activity_horizontal_margin_shift"
+    android:paddingBottom="@dimen/activity_vertical_margin_shift">
+
+    <android.support.v7.widget.CardView
+        app:cardBackgroundColor="@color/colorItemBuyCard"
+        app:cardCornerRadius="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/buy_card_item">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/picture_of_lobster"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/buy_cards_name_for_lobster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@color/colorTextOnCard">
+            </TextView>
+            <TextView
+                android:id="@+id/buy_cards_price_for_lobster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrice">
+            </TextView>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

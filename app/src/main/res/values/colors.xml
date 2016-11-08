@@ -6,6 +6,8 @@
     <color name="colorText">#3F51B5</color>
     <color name="colorCard">#3F51B5</color>
     <color name="colorTextOnCard">#ffffff</color>
+    <color name="colorItemBuyCard">#3F51B5</color>
     <color name="colorHead">#e41d1d</color>
+    <color name="colorPrice">#ffffff</color>
     <color name="colorBackgroundActivity">#ffffff</color>
 </resources>
