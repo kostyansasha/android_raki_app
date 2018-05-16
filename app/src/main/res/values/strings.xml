@@ -18,14 +18,23 @@
 
 
 
+    <string name="buy_textView_address">Введите адрес доставки:</string>
+    <string name="buy_textView_addressAndFastDelivery">Дата, время и адрес доставки,\n
+        или только дата, оператор свяжется с Вами для обсуждения деталей.</string>
 
-    <string name="buy_textView_address">Введите адрес для доставки</string>
-    <string name="buy_textView_addressAndFastDelivery">Введите дату, время и адрес для доставки,\n
-        или только дату и время, оператор свяжется с Вами для уточнения точного места доставки.</string>
-
-    <string name="buy_name_of_methodSend">Метод для отправки заявки</string>
+    <string name="buy_name_of_methodSend">Метод отправки заявки</string>
 
     <string name="telephone_number">+380974654080</string>
+
+    <string name="contacts_name1">Vodafone:</string>
+    <string name="contacts_number1">+380974654080</string>
+    <string name="contacts_name2">Kyivstar:</string>
+    <string name="contacts_number2">+38555555555</string>
+    <string name="contacts_name3">Email:</string>
+    <string name="contacts_number3">
+        <a href="default@urk.net\">default@ukr.net</a>
+    </string>
+
 
     <string name="buy_method_of_send_SMS">SMS</string>
     <string name="buy_method_of_send_EMAIL">email</string>
@@ -38,7 +47,7 @@
     <string name="home_text1">Закажите прямо сейчас.</string>
     <string name="home_text3">Заказать</string>
     <string name="home_text_contacts">Контакты</string>
+    <string name="home_text_about_us">О нас,\nпратнерам</string>
 
     <string name="buy_hint_inputPhone">Введите свой номер</string>
-    home_text_contacts
 </resources>

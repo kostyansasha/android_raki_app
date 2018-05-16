@@ -28,7 +28,6 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_alignParentLeft="true"
                     android:id="@+id/picture_of_lobster"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
