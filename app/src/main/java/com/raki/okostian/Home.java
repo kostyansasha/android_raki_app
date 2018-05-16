@@ -1,6 +1,7 @@
 package com.raki.okostian;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,7 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
+import android.view.ActionProvider;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -26,6 +32,7 @@ public class Home extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         final View view = inflater.inflate(R.layout.content_home, container, false);
 
@@ -50,7 +57,8 @@ public class Home extends Fragment {
         myCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCard("com.raki.okostian.BuyCards");
+                ((MainActivity)getActivity()).displayView(R.id.nav_main_buy);
+                //clickCard("com.raki.okostian.BuyCards");
             }
         });
 
@@ -58,7 +66,7 @@ public class Home extends Fragment {
         mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCard("com.raki.okostian.Contacts");
+                ((MainActivity)getActivity()).displayView(R.id.nav_contanct_us);
             }
         });
 
@@ -66,14 +74,14 @@ public class Home extends Fragment {
         m3CardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCard("com.raki.okostian.AboutUs");
+                ((MainActivity)getActivity()).displayView(R.id.nav_about_us);
             }
         });
 
         return view;
     }
 
-    private void clickCard(String name) {
+    /*private void clickCard(String name) {
         Fragment fragment = null;                                              //производительность
         try {
             fragment = (Fragment) Class.forName(name).newInstance();
@@ -89,5 +97,5 @@ public class Home extends Fragment {
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null); //   запоминается обратная работ
         fragmentTransaction.commit();
-    }
+    }*/
 }

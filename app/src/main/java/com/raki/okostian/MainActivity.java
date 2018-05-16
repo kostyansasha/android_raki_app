@@ -2,8 +2,6 @@ package com.raki.okostian;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,85 +12,18 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @SuppressWarnings("StatementWithEmptyBody")
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "BottomNavigationView.OnNavigationItemSelectedListener", Toast.LENGTH_SHORT);
-            toast.show();
-            return false;
-        }
-    };
-
-    private FragmentTransaction transaction;
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        displayView(item.getItemId());
-        item.setChecked(true);
-        return true;
-    }
-
-    public void displayView(int id) {
-
-        Fragment fragment = null;
-        Class fragmentClass = null;
-
-        switch (id) {
-            case R.id.nav_main_buy:
-                fragmentClass = BuyCards.class;
-                break;
-            case R.id.nav_about_us:
-                fragmentClass = AboutUs.class;
-                break;
-            case R.id.nav_share:
-                return;
-            case R.id.nav_send:
-                return;
-            case R.id.nav_home:
-                fragmentClass = Home.class;
-                break;
-        }
-
-
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            //write in log
-            e.printStackTrace();
-        }
-
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        //fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-
-        transaction = fragmentManager.beginTransaction();
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        transaction.replace(R.id.container, fragment);
-        transaction.commit();
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-
-    }
+    //private TextView mTextMessage;
+    private boolean isFirstLoad = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        setContentView(R.layout.activity_main);
         //не поворачивать
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -109,6 +40,60 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
+        isFirstLoad = false;
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        displayView(item.getItemId());
+        item.setChecked(true);
+        return true;
+    }
+
+    public void displayView(int id) {
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+        switch (id) {
+            case R.id.nav_main_buy:     fragmentClass = BuyCards.class;
+                break;
+            case R.id.nav_about_us:     fragmentClass = AboutUs.class;
+                break;
+            case R.id.nav_share:
+                return;
+            case R.id.nav_send:
+                return;
+            case R.id.nav_home:         fragmentClass = Home.class;
+                break;
+            case R.id.nav_contanct_us:  fragmentClass = Contacts.class;
+                break;
+        }
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            //write in log
+            e.printStackTrace();
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        //fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transaction.replace(R.id.container, fragment);
+
+        if(!isFirstLoad) {
+            transaction.addToBackStack(null); //   запоминается обратная работ
+        }
+        transaction.commit();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
+        //выделить как нажатое
+        ((NavigationView)findViewById(R.id.nav_view)).setCheckedItem(id);
     }
 
     @Override
@@ -117,9 +102,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            MenuItem mi = ((NavigationView)findViewById(R.id.nav_view)).getMenu().getItem(0);
+            mi.setChecked(true);
+            mi.setChecked(false);
             super.onBackPressed();
         }
     }
-
-
 }

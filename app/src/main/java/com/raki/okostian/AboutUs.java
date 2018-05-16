@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,19 +25,12 @@ public class AboutUs extends Fragment {
 
         View view = inflater.inflate(R.layout.content_about_us, container, false);
 
+        //final CardView m3CardView = view.findViewById(R.id.aboutUS_button_contacts);
         Button button =  view.findViewById(R.id.aboutUS_button_contacts);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Contacts();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                fragmentTransaction.replace(R.id.container, fragment);
-                fragmentTransaction.addToBackStack(null); //   запоминается обратная работ
-                fragmentTransaction.commit();
+                ((MainActivity)getActivity()).displayView(R.id.nav_contanct_us);
             }
         });
 

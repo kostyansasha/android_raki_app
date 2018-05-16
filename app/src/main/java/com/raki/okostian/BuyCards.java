@@ -206,7 +206,7 @@ public class BuyCards extends Fragment {
             }
         }
         totalCoast += price * totalWeights;
-        showCoast.setText("" + totalCoast);
+        showCoast.setText(/*"" + */Math.round(totalCoast) + " грн.");
     }
 
     private TextView showCoastOfOrders;
@@ -223,7 +223,7 @@ public class BuyCards extends Fragment {
             totalCoast += or.getWeights()* price;
         }
 
-        showCoastOfOrders.setText("Общий заказ " + totalCoast);
+        showCoastOfOrders.setText("Общий заказ " + Math.round(totalCoast) + " грн.");
     }
 
 
