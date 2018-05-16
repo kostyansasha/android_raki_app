@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
@@ -8,9 +8,13 @@
     android:layout_height="fill_parent"
     android:layout_gravity="center">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             app:srcCompat="@drawable/header"
             android:id="@+id/imageView1"
             android:scaleType="centerCrop"
@@ -57,20 +61,21 @@
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             card_view:cardBackgroundColor="@color/colorCard"
-            card_view:cardCornerRadius="5dp"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_marginTop="24dp"
+            android:layout_margin="5dp"
             android:id="@+id/home_card_view">
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:id="@+id/wide_card_itself"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,7 +130,8 @@
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 card_view:cardBackgroundColor="@color/colorCard"
-                card_view:cardCornerRadius="5dp"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:clickable="true"
@@ -155,16 +161,39 @@
 
             <android.support.v7.widget.CardView
                 app:cardBackgroundColor="@color/colorCard"
-                app:cardCornerRadius="5dp"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:id="@+id/home_card_view_3">
-
+                <TextView
+                    android:id="@+id/home_text_about_us"
+                    android:text="@string/home_text_about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextOnCard"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_menu_call"
+        android:layout_gravity="bottom|right" />
+
+</RelativeLayout>

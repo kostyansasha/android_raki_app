@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:text="Ваш заказ:"
+                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_orderList"
+                />
+
+            <CheckBox
+                android:text="@string/buy_checkBox_fastDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirm_checkBox_fast_delivery"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:text="@string/buy_textView_addressAndFastDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirm_textView_inputForAddress"
+                android:textColor="@color/colorText"
+                android:layout_marginTop="5dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/buy_editText_address"
+                android:textColor="@color/colorText"
+                android:inputType="textPersonName" />
+
+            <LinearLayout
+                android:id="@+id/confirm_order_sendSMS"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorRed"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:text="Отправить СМС"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/colorTextOnCard"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

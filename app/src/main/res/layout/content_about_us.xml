@@ -20,7 +20,8 @@
         android:id="@+id/aboutUS_textView1"
         android:text="    Раки - традиционный деликатес, мясо которых имеет полезные свойстава и нежный вкус.
         \n\n    Мы очень небольшая группа людей, готовые к большим изменениям в своем бизнесе и жизни.
-        \n\n    Будем рады к пожеланиям и сотрудничеству."
+        \n\n    Будем рады к пожеланиям.
+        \n\n    Если вы поставщик давайте обсудим наше будущее сотрудничество."
         android:textSize="16sp"
         android:textColor="@color/colorText"
         android:layout_marginLeft="20dp" />
@@ -34,9 +35,16 @@
         android:textSize="16sp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:text="Свяжитесь с нами по почте:
-        \n      lobster_sumy@mmm
-        \nили позвоните."
+        android:text="Свяжитесь с нами по почте или позвоните."
         android:textColor="@color/colorText"/>
+
+    <Button
+        android:text="@string/home_text_contacts"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:id="@+id/aboutUS_button_contacts" />
+
 
 </LinearLayout>

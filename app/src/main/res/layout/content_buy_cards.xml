@@ -1,22 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<GridView
-        android:id="@+id/gvMain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    </GridView>
-    -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/rv"
+                 />
 
-    <android.support.v7.widget.RecyclerView
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/buy_cards_weights"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorRed"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="50dp"
+                android:background="@color/colorRed">
+
+                <TextView
+                    android:id="@+id/buy_cards_name_of_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorTextOnCard"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:id="@+id/buy_cards_minus">
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorTextOnCard"
+                            android:textSize="25sp"
+                            android:textAppearance="@style/TextAppearance.AppCompat"
+                            android:text="-" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/buy_cards_total_weights"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorTextOnCard"
+                            android:textSize="18sp"
+                            android:text="1кг." />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:id="@+id/buy_cards_plus">
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorTextOnCard"
+                            android:textSize="25sp"
+                            android:textAppearance="@style/TextAppearance.AppCompat"
+                            android:text="+" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="@color/colorRed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:id="@+id/buy_text_cost_of_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextOnCard"
+                        android:textSize="18sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:text=""
+                        android:layout_gravity="center"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:id="@+id/buy_button_delete_from_order">
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextOnCard"
+                        android:textSize="18sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:text="Удалить с заказа"
+                        android:layout_gravity="center"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:id="@+id/buy_button_add_to_order">
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextOnCard"
+                        android:textSize="18sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:text="Добавить в заказ"
+                        android:layout_gravity="center"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rv"
-        />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorRed">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/buy_text_cast_all"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorTextOnCard"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:text=""
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:id="@+id/buy_button_confirm_order">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorTextOnCard"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:text="Оформить заказ"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
