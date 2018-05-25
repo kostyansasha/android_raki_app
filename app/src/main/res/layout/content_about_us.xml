@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        android:text="Раки - традиционный деликатес, мясо которых имеет полезные свойстава и нежный вкус." />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="190dp"
 
-        android:src="@drawable/lobster_and_letters"
+        android:layout_marginBottom="15dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp" />
+        android:src="@drawable/vsemrrakamraki" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/aboutUS_textView1"
-        android:text="    Раки - традиционный деликатес, мясо которых имеет полезные свойстава и нежный вкус.
-        \n\n    Мы очень небольшая группа людей, готовые к большим изменениям в своем бизнесе и жизни.
-        \n\n    Будем рады к пожеланиям.
-        \n\n    Если вы поставщик давайте обсудим наше будущее сотрудничество."
-        android:textSize="16sp"
-        android:textColor="@color/colorText"
-        android:layout_marginLeft="20dp" />
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingEnd="0dp"
+        android:text="Мы очень небольшая группа людей, готовые к большим изменениям в своем бизнесе и жизни. Будем рады к пожеланиям. А если вы поставщик, давайте обсудим наше будущее сотрудничество."
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/aboutUS_textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
         android:autoLink="email"
         android:linksClickable="true"
-        android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
         android:text="Свяжитесь с нами по почте или позвоните."
-        android:textColor="@color/colorText"/>
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="16sp" />
 
     <Button
-        android:text="@string/home_text_contacts"
-        android:layout_marginLeft="10dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/aboutUS_button_contacts"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity=""
-        android:id="@+id/aboutUS_button_contacts" />
+        android:layout_margin="10dp"
+        android:text="@string/home_text_contacts"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
