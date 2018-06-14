@@ -17,7 +17,6 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
 
     OrderRecyclerViewAdapter(List<Order> orderArray) {
         this.orderArray = orderArray;
-
     }
 
     @Override
@@ -34,7 +33,8 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
 
         float price = orderArray.get(position).getWeights()* orderArray.get(position).getLobster().getPrice();
         holder.totalCoast.setText(
-                orderArray.get(position).getWeights() + "кг.,\n" + price + "грн.");
+                Math.round(orderArray.get(position).getWeights()) + " кг.\n" +
+                Math.round(price) + " грн.");
 
         holder.lobsterPhoto.setImageResource(orderArray.get(position).getLobster().getPictureResource());
     }

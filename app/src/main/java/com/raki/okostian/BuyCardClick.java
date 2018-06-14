@@ -1,6 +1,5 @@
 package com.raki.okostian;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -11,6 +10,7 @@ import java.util.List;
 
 
 public class BuyCardClick implements View.OnClickListener {
+    public static BuyCards buyCardClass;
 
     private static List<BuyCardClick> listCards = new ArrayList<>();
     private RecyclerViewAdapter.LobsterViewHolder lobHold;
@@ -34,19 +34,25 @@ public class BuyCardClick implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (!lobHold.isSelected()) {
+            //unselect another
+            for (BuyCardClick b : getListCards()) {
+                if (b.lobHold.isSelected()) {
+                    b.unSelectItem(b.lobHold.cardView);
+                }
+            }
             selectItem(v);
         } else {
             unSelectItem(v);
         }
+        buyCardClass.showCoastOfItem();
     }
 
     private LinearLayout weightLobster;
     private TextView textView;
 
     private void selectItem(View v) {
-        lobHold.cardView.setBackgroundColor(Color.RED);
-        //lobHold.cardView.setRadius(4);                                                     ///fsffdsf
         lobHold.setSelected(true);
+        lobHold.cardView.setCardBackgroundColor(v.getResources().getColor(R.color.colorItemClicked));
 
         weightLobster = (LinearLayout) parentView.findViewById(R.id.buy_cards_weights);
         weightLobster.setVisibility(View.VISIBLE);
@@ -57,7 +63,7 @@ public class BuyCardClick implements View.OnClickListener {
 
     private void unSelectItem(View v) {
         lobHold.setSelected(false);
-        lobHold.cardView.setBackgroundColor(getColorBackground(v));
+        lobHold.cardView.setCardBackgroundColor(getColorBackground(v));
 
         weightLobster.setVisibility(View.INVISIBLE);
     }

@@ -6,9 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
-    android:paddingRight="@dimen/activity_horizontal_margin_shift"
+    android:paddingRight="0dp"
     android:paddingTop="@dimen/activity_horizontal_margin_shift_between_2cards"
-    android:paddingLeft="@dimen/activity_horizontal_margin_shift"
+    android:paddingLeft="0dp"
     android:paddingBottom="@dimen/activity_horizontal_margin_shift_between_2cards">
 
     <android.support.v7.widget.CardView
@@ -42,15 +42,16 @@
                     android:textColor="@color/colorTextOnCard">
                 </TextView>
             </LinearLayout>
+
             <TextView
-                android:layout_alignParentRight="true"
                 android:id="@+id/order_card_coast"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
                 android:gravity="center_vertical"
-                android:textSize="20sp"
-                android:textColor="@color/colorPrice">
-            </TextView>
+                android:textAlignment="center"
+                android:textColor="@color/colorPrice"
+                android:textSize="20sp" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

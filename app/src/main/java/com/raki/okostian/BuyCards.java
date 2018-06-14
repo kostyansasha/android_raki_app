@@ -28,13 +28,13 @@ public class BuyCards extends Fragment {
     private List<Lobster> lobsters;
     private void initialisationList(View v){
         lobsters = new ArrayList<>();
-        lobsters.add(new Lobster("Семечки, 20-30г.",
+        lobsters.add(new Lobster(getResources().getString(R.string.order_value_name_1),
                 v.getResources().getInteger(R.integer.buy_gradation_price_1), R.drawable.green_1));
-        lobsters.add(new Lobster("Мелкие, 30-40г.",
+        lobsters.add(new Lobster(getResources().getString(R.string.order_value_name_2),
                 v.getResources().getInteger(R.integer.buy_gradation_price_2), R.drawable.green_1));
-        lobsters.add(new Lobster("Средние, 40-60г.",
+        lobsters.add(new Lobster(getResources().getString(R.string.order_value_name_3),
                 v.getResources().getInteger(R.integer.buy_gradation_price_3), R.drawable.green_1));
-        lobsters.add(new Lobster("Крупные, 60г.",
+        lobsters.add(new Lobster(getResources().getString(R.string.order_value_name_4),
                 v.getResources().getInteger(R.integer.buy_gradation_price_4), R.drawable.green_1));
     }
 
@@ -59,6 +59,7 @@ public class BuyCards extends Fragment {
         final RecyclerViewAdapter adapter = new RecyclerViewAdapter(lobsters);
         adapter.setParentView(view);
         rv.setAdapter(adapter);
+        BuyCardClick.buyCardClass = this;
 
         final RelativeLayout butPlus = (RelativeLayout) view.findViewById(R.id.buy_cards_plus);
         butPlus.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +67,7 @@ public class BuyCards extends Fragment {
             public void onClick(View v) {
                 totalWeights += 0.5;
                 showWeight();
-                showCoastOfItem(v);
+                showCoastOfItem();
             }
         });
 
@@ -78,7 +79,7 @@ public class BuyCards extends Fragment {
                     totalWeights -= 0.5;
                 }
                 showWeight();
-                showCoastOfItem(v);
+                showCoastOfItem();
             }
         });
 
@@ -126,7 +127,7 @@ public class BuyCards extends Fragment {
                 }
 
                 refreshView(v, adapter, i);
-                showMessage("Успешно добавлено к заказу");
+                showMessage("Добавлено в корзину");
             }
         });
 
@@ -155,7 +156,7 @@ public class BuyCards extends Fragment {
                     }
                 }
                 refreshView(v, adapter, j);
-                showMessage("Заказ удален");
+                showMessage("Удалено с корзины");
             }
         });
 
@@ -189,14 +190,14 @@ public class BuyCards extends Fragment {
     private TextView showTotalWeight;
 
     private void showWeight(){
-        showTotalWeight.setText(totalWeights + "кг.");
+        showTotalWeight.setText(totalWeights + " кг.");
     }
 
 
     private TextView showCoast;
     private float totalCoast = 0;
 
-    private void showCoastOfItem(View v) {
+    public void showCoastOfItem() {
         totalCoast = 0;
         int price = 0;
         for (Lobster l: lobsters) {
@@ -206,7 +207,7 @@ public class BuyCards extends Fragment {
             }
         }
         totalCoast += price * totalWeights;
-        showCoast.setText(/*"" + */Math.round(totalCoast) + " грн.");
+        showCoast.setText(Math.round(totalCoast) +  " " + getResources().getString(R.string.currency));
     }
 
     private TextView showCoastOfOrders;
@@ -223,7 +224,9 @@ public class BuyCards extends Fragment {
             totalCoast += or.getWeights()* price;
         }
 
-        showCoastOfOrders.setText("Общий заказ " + Math.round(totalCoast) + " грн.");
+        showCoastOfOrders.setText(getResources().getString(R.string.order_name_basket)
+                + " " + Math.round(totalCoast)
+                + " " + getResources().getString(R.string.currency));
     }
 
 
@@ -243,7 +246,7 @@ public class BuyCards extends Fragment {
         showCoastOfOrders(v);
         totalWeights = 1;
         showWeight();
-        showCoastOfItem(v);
+        showCoastOfItem();
 
         //убираем следы выбора
         for (BuyCardClick item: BuyCardClick.getListCards()) {

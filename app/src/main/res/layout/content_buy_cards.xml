@@ -20,20 +20,20 @@
 
         </LinearLayout>
 
-
+        <!---android:background="@color/colorBuyLayout"-->
         <LinearLayout
             android:id="@+id/buy_cards_weights"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/colorRed"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            android:background="@drawable/shape">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:orientation="horizontal"
                 android:layout_height="50dp"
-                android:background="@color/colorRed">
+                android:background="@color/colorBuyLayout">
 
                 <TextView
                     android:id="@+id/buy_cards_name_of_selected"
@@ -44,7 +44,28 @@
                     android:textColor="@color/colorTextOnCard"
                     android:textSize="18sp"
                     android:layout_margin="10dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat" />
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:width="1px"
+                    android:visibility="invisible"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/buy_text_cost_of_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@color/colorTextOnCard"
+                        android:textSize="18sp" />
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -107,42 +128,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:background="@color/colorRed"
+                android:background="@color/colorBuyLayout"
                 android:baselineAligned="false">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1.0"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_centerVertical="true"
-                        android:layout_margin="10dp"
-                        android:id="@+id/buy_text_cost_of_order"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorTextOnCard"
-                        android:textSize="18sp"
-                        android:textAppearance="@style/TextAppearance.AppCompat"
-                        android:text=""
-                        android:layout_gravity="center"/>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.0"
                     android:orientation="vertical"
                     android:id="@+id/buy_button_delete_from_order">
+
                     <TextView
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorTextOnCard"
-                        android:textSize="18sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:text="@string/DeleteFromOrderButton"
+                        android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat"
-                        android:text="Удалить с заказа"
-                        android:layout_gravity="center"/>
+                        android:textColor="@color/colorTextOnCard"
+                        android:textSize="18sp" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -150,16 +156,17 @@
                     android:layout_weight="1.0"
                     android:orientation="vertical"
                     android:id="@+id/buy_button_add_to_order">
+
                     <TextView
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorTextOnCard"
-                        android:textSize="18sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:text="@string/AddInOrderButton"
                         android:textAppearance="@style/TextAppearance.AppCompat"
-                        android:text="Добавить в заказ"
-                        android:layout_gravity="center"/>
+                        android:textColor="@color/colorTextOnCard"
+                        android:textSize="18sp" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
@@ -167,49 +174,49 @@
     </LinearLayout>
 
 
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorRed"
-        android:baselineAligned="false">
+        android:background="@drawable/shape"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.0"
+            android:layout_weight="2"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/buy_text_cast_all"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/colorTextOnCard"
-                android:textSize="18sp"
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:textAppearance="@style/TextAppearance.AppCompat"
                 android:text=""
-                android:layout_gravity="center"/>
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/colorTextOnCard"
+                android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/buy_button_confirm_order"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:orientation="vertical"
-            android:id="@+id/buy_button_confirm_order">
+            android:orientation="vertical">
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textColor="@color/colorTextOnCard"
-                android:textSize="18sp"
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
+                android:text="К покупке"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:text="Оформить заказ"
-                android:layout_gravity="center"/>
+                android:textColor="@color/colorTextOnCard"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
